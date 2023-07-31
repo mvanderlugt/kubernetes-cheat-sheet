@@ -5,7 +5,7 @@ else
 fi
 
 if [ -z ${NAMESPACES+x} ]; then 
-    NAMESPACES=$(kubectl get namespaces | awk '{ print $1 }' | tail -n +2)
+    NAMESPACES=$($kubectl get namespaces | awk '{ print $1 }' | tail -n +2)
 fi
 
 if [ -z ${ACTIONS+x} ]; then
